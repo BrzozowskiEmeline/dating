@@ -6,8 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.formation.dating.Entity.Adresse;
-
-import come.formation.dating.Repository.AdresseRepository;
+import com.formation.dating.Repository.AdresseRepository;
 
 @Service
 public class AdresseService {

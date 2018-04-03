@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<ul th:text="${key}">
+		<li th:text="${index.nom}">Nom</li>
+		<li th:text="${index.prenom}">Prenom</li>
+		<li th:text="${index.dateDeNaissance}">dateDeNaissance</li>
+		<li th:text="${index.sexe}">sexe</li>
+	</ul>
+	
+	</div>
+	
+
+</body>
+</html>

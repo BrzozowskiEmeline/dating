@@ -1,5 +1,6 @@
 package com.formation.dating.Entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -124,7 +125,10 @@ public class Adresse {
 }
 
 
-	public Adresse() {}
+	public Adresse() {
+		
+		utilisateurs = new ArrayList<>();
+	}
 	
 
 }

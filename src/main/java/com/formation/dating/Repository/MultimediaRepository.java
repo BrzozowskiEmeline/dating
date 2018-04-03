@@ -1,4 +1,4 @@
-package come.formation.dating.Repository;
+package com.formation.dating.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

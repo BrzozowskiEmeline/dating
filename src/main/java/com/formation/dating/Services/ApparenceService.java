@@ -3,7 +3,7 @@ package com.formation.dating.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import come.formation.dating.Repository.ApparenceRepository;
+import com.formation.dating.Repository.ApparenceRepository;
 
 @Service
 public class ApparenceService {

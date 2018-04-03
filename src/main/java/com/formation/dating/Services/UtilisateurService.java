@@ -1,9 +1,12 @@
 package com.formation.dating.Services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import come.formation.dating.Repository.UtilisateurRepository;
+import com.formation.dating.Entity.Utilisateur;
+import com.formation.dating.Repository.UtilisateurRepository;
 
 @Service
 public class UtilisateurService {
@@ -17,7 +20,9 @@ public class UtilisateurService {
 	}
 	
 	
-	
+	public  List<Utilisateur> affiche() {
+		return ur.findAll();
+	}
 	
 
 }

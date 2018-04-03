@@ -7,25 +7,31 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1 th:text="${mav}"> </h1>
 
-<div>
-	<ul>
-	<li th:text="${carnet.id}"></li>
-	<li th:text="${carnet.civilite}">civilite</li>
-	<li th:text="${carnet.nom}">nom </li>
-	<li th:text="${carnet.prenom}">prenom</li>
-	<li th:text="${carnet.dateDeNaissance}">dateDeNaissance</li>
-	<li th:text="${carnet.tel}">tel</li>
-	<li th:text="${carnet.email}">email</li>
-	<li th:text="${carnet.cp}">cp</li>
-	<li th:text="${carnet.ville}">ville</li>
+	<form th:action="@{/formulaire}" th:object="${/utilisateur}" method="post">
 	
-	</ul>
+	<label for="emailUtilisateur">emailUtilisateur</label> <input type=text id="emailUtilisateur" th:field="*{emailUtilisateur}"></br>
+		<p th:if="${#fields.hasErrors('emailUtilisateur')}" th:errors="*{emailUtilisateur}"></p><br>
+	 
 	
-	
-	
-	
-</div>
+		<label for="nom">Nom</label> <input type=text id="nom" th:field="*{nom}"></br>
+		<p th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"></p><br>
+		
+		<label for="prenom">Prenom</label> <input type=text id="prenom" th:field="*{prenom}"></br>
+		<p th:if="${#fields.hasErrors('prenom')}" th:errors="*{prenom}"></p><br>
+		
+		<label for="dateDeNaissance">dateDeNaissance</label> <input type=text id="dateDeNaissance" th:field="*{dateDeNaissance}"></br>
+		<p th:if="${#fields.hasErrors('dateDeNaissance')}" th:errors="*{dateDeNaissance}"></p><br>
+
+ <label for="H">Homme</label><input type="radio" id="H" name="sexe" value="H" th:field="*{sexe}">
+ <label for="F">Femme</label><input type="radio" id="F" name="sexe" value="F" th:field="*{sexe}">
+ <p th:if="${#fields.hasErrors('sexe')}" th:errors="*{sexe}"></p><br>
+ 
+ 
+ 
+ 
+ 
+ <br> <input type="submit" value="valider">
+</form>
 </body>
 </html>

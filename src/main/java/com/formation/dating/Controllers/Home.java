@@ -13,7 +13,7 @@ public class Home {
 	@RequestMapping("/home")
 	@ResponseBody
 	public String index() {
-		return "<h1>home Hello</h1>";
+		return "<h1>home </h1>";
 	}
 
 	@GetMapping("/test")
