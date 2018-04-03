@@ -1,16 +1,10 @@
-package com.formation.dating.Entity;
+package com.formation.dating.Services;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
 public class CentreInteret {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
 	private String sport;
 	private String loisir;
 	
@@ -18,16 +12,6 @@ public class CentreInteret {
 	
 	
 	
-	public Long getId() {
-		return id;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
 	public String getSport() {
 		return sport;
 	}
@@ -52,16 +36,14 @@ public class CentreInteret {
 
 	
 
-
-
-
-
-	public CentreInteret(Long id, String sport, String loisir) {
+	public CentreInteret(String sport, String loisir) {
 		super();
-		this.id = id;
 		this.sport = sport;
 		this.loisir = loisir;
 	}
+
+
+
 
 
 	public CentreInteret() {

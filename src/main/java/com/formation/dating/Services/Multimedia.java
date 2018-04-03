@@ -1,17 +1,10 @@
-package com.formation.dating.Entity;
+package com.formation.dating.Services;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
 public class Multimedia {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	
 	private String typeMultimedia;
 	private String genre;
 	private String titre;
@@ -19,19 +12,6 @@ public class Multimedia {
 	
 	
 	
-	
-	public Long getId() {
-		return id;
-	}
-
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-
 	public String getTypeMultimedia() {
 		return typeMultimedia;
 	}
@@ -80,13 +60,8 @@ public class Multimedia {
 
 
 
-	
-
-
-
-	public Multimedia(Long id, String typeMultimedia, String genre, String titre, String artiste) {
+	public Multimedia(String typeMultimedia, String genre, String titre, String artiste) {
 		super();
-		this.id = id;
 		this.typeMultimedia = typeMultimedia;
 		this.genre = genre;
 		this.titre = titre;

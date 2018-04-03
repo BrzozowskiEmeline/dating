@@ -1,18 +1,9 @@
-package com.formation.dating.Entity;
+package com.formation.dating.Services;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.Email;
 
 @Entity
 public class Utilisateur {
-	
-	@Id
-	@Email
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String emailUtilisateur;
 	
 	private String nom;
 	private String prenom;

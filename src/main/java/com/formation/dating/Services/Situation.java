@@ -1,16 +1,9 @@
-package com.formation.dating.Entity;
+package com.formation.dating.Services;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
 public class Situation {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	
 	
 	private String statutPro;
 	private String statutPerso;
@@ -22,20 +15,6 @@ public class Situation {
 	
 	
 	
-	public Long getId() {
-		return id;
-	}
-
-
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-
-
 	public String getStatutPro() {
 		return statutPro;
 	}
@@ -120,15 +99,9 @@ public class Situation {
 
 
 
-
-
-
-
-
-	public Situation(Long id, String statutPro, String statutPerso, String orientation, String fumeur, String alcool,
+	public Situation(String statutPro, String statutPerso, String orientation, String fumeur, String alcool,
 			int numero) {
 		super();
-		this.id = id;
 		this.statutPro = statutPro;
 		this.statutPerso = statutPerso;
 		this.orientation = orientation;
