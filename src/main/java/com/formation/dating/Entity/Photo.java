@@ -27,7 +27,7 @@ public class Photo {
 	
 	
 	@ManyToOne
-	private Utilisateur utilisateurs;
+	private Utilisateur utilisateur;
 	
 	
 	

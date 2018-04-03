@@ -9,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
@@ -58,7 +59,7 @@ public class Utilisateur {
 	private String description;
 	
 	@NotNull(message = "Attention un pseudo est recommandé ")
-	@Column(length =500)
+	@Column(length =50)
 	private String pseudo;
 	
 	@Pattern(message = "{com.example.demo.annuaire.contraint.Tel.message}", regexp = "[0-9]{4,14}")
@@ -70,23 +71,29 @@ public class Utilisateur {
 	
 	
 	
+	
+	
 	@ManyToOne
 	private Adresse adresse;
 	
-	@OneToMany(mappedBy="utilisateurs")
-	private List<Photo> photo;
+	@OneToMany(mappedBy="utilisateur")
+	private List<Photo> photos;
 	
 	@ManyToOne
 	private Apparence apparence;
 	
-	@ManyToOne
-	private CentreInteret centreInteret;
+	@ManyToMany
+	private List<CentreInteret> centreInterets;
 	
 	@ManyToOne
 	private Multimedia multimedia;
 	
 	@ManyToOne
 	private Situation situation;
+	
+	@ManyToMany
+	private List<Utilisateur> favoris;
+	
 	
 	
 	

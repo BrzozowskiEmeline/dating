@@ -1,10 +1,12 @@
 package com.formation.dating.Entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
@@ -25,8 +27,8 @@ public class CentreInteret {
 	
 	
 	
-	@ManyToOne
-	private Utilisateur utilisateur;
+	@ManyToMany
+	private List<Utilisateur> utilisateurs;
 	
 	
 	

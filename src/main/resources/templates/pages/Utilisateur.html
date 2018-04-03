@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" >
 
-
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
 
-	<form th:action="@{/formulaire}" th:object="${/utilisateur}" method="post">
+	<form th:action="@{/formulaire}" th:object="${Utilisateur}" method="post">
 	
-	<label for="emailUtilisateur">emailUtilisateur</label> <input type=text id="emailUtilisateur" th:field="*{emailUtilisateur}"></br>
+		<label for="emailUtilisateur">Email</label> <input type=text id="emailUtilisateur" th:field="*{emailUtilisateur}"></br>
 		<p th:if="${#fields.hasErrors('emailUtilisateur')}" th:errors="*{emailUtilisateur}"></p><br>
 	 
 	
@@ -20,16 +19,26 @@
 		<label for="prenom">Prenom</label> <input type=text id="prenom" th:field="*{prenom}"></br>
 		<p th:if="${#fields.hasErrors('prenom')}" th:errors="*{prenom}"></p><br>
 		
-		<label for="dateDeNaissance">dateDeNaissance</label> <input type=text id="dateDeNaissance" th:field="*{dateDeNaissance}"></br>
+		<label for="dateDeNaissance">Date De Naissance</label> <input type=text id="dateDeNaissance" th:field="*{dateDeNaissance}"></br>
 		<p th:if="${#fields.hasErrors('dateDeNaissance')}" th:errors="*{dateDeNaissance}"></p><br>
 
  <label for="H">Homme</label><input type="radio" id="H" name="sexe" value="H" th:field="*{sexe}">
  <label for="F">Femme</label><input type="radio" id="F" name="sexe" value="F" th:field="*{sexe}">
- <p th:if="${#fields.hasErrors('sexe')}" th:errors="*{sexe}"></p><br>
+ <p th:if="${#fields.hasErrors('sexe')}" th:errors="*{sexe}"></p><br><br>
  
+ 		<label for="motDePasse">Mot De Passe</label> <input type=text id="motDePasse" th:field="*{motDePasse}"></br>
+		<p th:if="${#fields.hasErrors('motDePasse')}" th:errors="*{motDePasse}"></p><br>
  
+  		<label for="description">Description</label> <input type=text id="description" th:field="*{description}"></br>
+		<p th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p><br>
  
- 
+ 		<label for="pseudo">Pseudo</label> <input type=text id="pseudo" th:field="*{pseudo}"></br>
+		<p th:if="${#fields.hasErrors('pseudo')}" th:errors="*{pseudo}"></p><br>
+		
+		<label for="numeroTel">Numero de Telephone </label> <input type=text id="numeroTel" th:field="*{numeroTel}"></br>
+		<p th:if="${#fields.hasErrors('numeroTel')}" th:errors="*{numeroTel}"></p><br>
+		
+		
  
  <br> <input type="submit" value="valider">
 </form>
