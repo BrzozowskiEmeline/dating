@@ -45,8 +45,8 @@ public class Apparence {
 	
 	
 	
-	@OneToMany(mappedBy="Apparence")
-	private List<Utilisateur> utilisateur;
+	@OneToMany(mappedBy="apparence")
+	private List<Utilisateur> utilisateurs;
 	
 	
 	

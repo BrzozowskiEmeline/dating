@@ -17,6 +17,8 @@ import javax.validation.constraints.Pattern;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.formation.dating.Enum.Sexe;
+
 
 @Entity
 public class Utilisateur {
@@ -44,7 +46,7 @@ public class Utilisateur {
 	@NotNull(message = "Message d'\'erreur")
 	@Enumerated(EnumType.STRING)
 	@Column(length = 8)
-	private String sexe;
+	private Sexe sexe;
 	
 	@NotNull(message = "N'oubliez pas votre Mot de passe")
 	@Column(length =10)
@@ -71,7 +73,7 @@ public class Utilisateur {
 	@ManyToOne
 	private Adresse adresse;
 	
-	@OneToMany(mappedBy=" Utilisateur")
+	@OneToMany(mappedBy="utilisateurs")
 	private List<Photo> photo;
 	
 	@ManyToOne
@@ -108,10 +110,10 @@ public class Utilisateur {
 	public void setDateDeNaissance(int dateDeNaissance) {
 		this.dateDeNaissance = dateDeNaissance;
 	}
-	public String getSexe() {
+	public Sexe getSexe() {
 		return sexe;
 	}
-	public void setSexe(String sexe) {
+	public void setSexe(Sexe sexe) {
 		this.sexe = sexe;
 	}
 	public String getMotDePasse() {
@@ -156,7 +158,7 @@ public class Utilisateur {
 	
 	
 	
-	public Utilisateur(String emailUtilisateur, String nom, String prenom, int dateDeNaissance, String sexe,
+	public Utilisateur(String emailUtilisateur, String nom, String prenom, int dateDeNaissance, Sexe sexe,
 			String motDePasse, String description, String pseudo, int numeroTel, int type) {
 		super();
 		this.emailUtilisateur = emailUtilisateur;

@@ -1,12 +1,14 @@
-package com.formation.dating.Entity;
+package com.formation.dating.Enum;
 
-public enum sexe {
+public enum Sexe {
 
 	
 	H("Homme"),F("Femme");
 	
 	private String nom;
-	private sexe(String nom) {
+	
+	
+	private Sexe(String nom) {
 	this.nom = nom;
 	}
 	

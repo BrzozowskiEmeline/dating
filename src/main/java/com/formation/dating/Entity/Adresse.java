@@ -11,7 +11,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+
+import com.formation.dating.Enum.Prefixe;
+import com.formation.dating.Enum.TypeRue;
 
 @Entity
 public class Adresse {
@@ -34,16 +38,17 @@ public class Adresse {
 	@Column(length = 5)
 	private int numero;
 	
-	@NotBlank
+	@NotNull(message = "Message d'\'erreur")
 	@Enumerated(EnumType.STRING)
-	private String typeRue;
+	@Column(length = 8)
+	private TypeRue typeRue;
 	
 	@NotBlank
 	@Pattern(regexp = "(?i)[a-z- ]{1,10}", message = "{Veuillez remplir le complement}")
 	private String complement;
 	
 	
-	private String prefixe;
+	private Prefixe prefixe;
 	
 	
 	
@@ -51,8 +56,8 @@ public class Adresse {
 	
 	
 	
-	@OneToMany(mappedBy="Adresse")
-	private List<Utilisateur> utilisateur;
+	@OneToMany(mappedBy="adresse")
+	private List<Utilisateur> utilisateurs;
 	
 	
 	
@@ -83,10 +88,10 @@ public class Adresse {
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
-	public String getTypeRue() {
+	public TypeRue getTypeRue() {
 		return typeRue;
 	}
-	public void setTypeRue(String typeRue) {
+	public void setTypeRue(TypeRue typeRue) {
 		this.typeRue = typeRue;
 	}
 	public String getComplement() {
@@ -95,10 +100,10 @@ public class Adresse {
 	public void setComplement(String complement) {
 		this.complement = complement;
 	}
-	public String getPrefixe() {
+	public Prefixe getPrefixe() {
 		return prefixe;
 	}
-	public void setPrefixe(String prefixe) {
+	public void setPrefixe(Prefixe prefixe) {
 		this.prefixe = prefixe;
 	}
 
@@ -107,7 +112,7 @@ public class Adresse {
 
 	
 	public Adresse(Long id, @NotBlank int codePostal, @NotBlank String ville, @NotBlank int numero,
-		@NotBlank String typeRue, String complement, String prefixe) {
+		@NotBlank TypeRue typeRue, String complement, Prefixe prefixe) {
 	super();
 	this.id = id;
 	CodePostal = codePostal;

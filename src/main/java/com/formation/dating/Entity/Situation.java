@@ -38,8 +38,8 @@ public class Situation {
 	private int numero;
 	
 	
-	@OneToMany(mappedBy="Situation")
-	private List<Utilisateur> utilisateur;
+	@OneToMany(mappedBy="situation")
+	private List<Utilisateur> utilisateurs;
  	
 	
 	public Long getId() {
