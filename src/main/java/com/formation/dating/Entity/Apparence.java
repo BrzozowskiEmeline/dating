@@ -1,11 +1,15 @@
 package com.formation.dating.Entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 @Entity
 public class Apparence {
@@ -19,100 +23,72 @@ public class Apparence {
 	private int taille;
 	
 	@NotBlank
+	@Pattern(regexp = "(?i)[a-z- ]{1,10}", message = "{ Champs vide}")
 	private String couleurYeux;
 	
-	
+	@NotBlank
+	@Pattern(regexp = "(?i)[a-z- ]{1,10}", message = "{ Champs vide}")
 	private String origine;
 	
 	@NotBlank
+	@Pattern(regexp = "(?i)[a-z- ]{1,10}", message = "{ Champs vide}")
 	private String couleurCheveux;
 	
-	
+	@NotBlank
+	@Pattern(regexp = "(?i)[a-z- ]{1,10}", message = "{ Champs vide}")
 	private String typeCheveux;
 	
 	@NotBlank
+	@Pattern(regexp = "(?i)[0-9 ]{1,3}", message = "{ Champs vide}")
 	private float masse;
+	
+	
+	
+	
+	@OneToMany(mappedBy="Apparence")
+	private List<Utilisateur> utilisateur;
 	
 	
 	
 	public Long getId() {
 		return id;
 	}
-
-
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-
-
 	public int getTaille() {
 		return taille;
 	}
-
-
-
 	public void setTaille(int taille) {
 		this.taille = taille;
 	}
-
-
-
 	public String getCouleurYeux() {
 		return couleurYeux;
 	}
-
-
-
 	public void setCouleurYeux(String couleurYeux) {
 		this.couleurYeux = couleurYeux;
 	}
-
-
-
 	public String getOrigine() {
 		return origine;
 	}
-
-
-
 	public void setOrigine(String origine) {
 		this.origine = origine;
 	}
-
-
-
 	public String getCouleurCheveux() {
 		return couleurCheveux;
 	}
-
-
-
 	public void setCouleurCheveux(String couleurCheveux) {
 		this.couleurCheveux = couleurCheveux;
 	}
-
-
-
 	public String getTypeCheveux() {
 		return typeCheveux;
 	}
-
-
-
 	public void setTypeCheveux(String typeCheveux) {
 		this.typeCheveux = typeCheveux;
 	}
-
-
-
 	public float getMasse() {
 		return masse;
 	}
-
-
-
 	public void setMasse(float masse) {
 		this.masse = masse;
 	}
@@ -123,9 +99,12 @@ public class Apparence {
 
 
 
-
-	public Apparence(Long id, @NotBlank int taille, @NotBlank String couleurYeux, String origine,
-			@NotBlank String couleurCheveux, String typeCheveux, @NotBlank float masse) {
+	public Apparence(Long id, @NotBlank int taille,
+			@NotBlank @Pattern(regexp = "(?i)[a-z- ]{1,10}", message = "{ Champs vide}") String couleurYeux,
+			@NotBlank @Pattern(regexp = "(?i)[a-z- ]{1,10}", message = "{ Champs vide}") String origine,
+			@NotBlank @Pattern(regexp = "(?i)[a-z- ]{1,10}", message = "{ Champs vide}") String couleurCheveux,
+			@NotBlank @Pattern(regexp = "(?i)[a-z- ]{1,10}", message = "{ Champs vide}") String typeCheveux,
+			@NotBlank @Pattern(regexp = "(?i)[0-9 ]{1,3}", message = "{ Champs vide}") float masse) {
 		super();
 		this.id = id;
 		this.taille = taille;
@@ -135,9 +114,8 @@ public class Apparence {
 		this.typeCheveux = typeCheveux;
 		this.masse = masse;
 	}
-
-
-
+	
+	
 	public Apparence(){
 		
 	}

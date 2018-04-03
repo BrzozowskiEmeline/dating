@@ -1,11 +1,17 @@
 package com.formation.dating.Entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 @Entity
 public class Adresse {
@@ -15,21 +21,25 @@ public class Adresse {
 	private Long id;
 	
 	@NotBlank
-	@Column(length = 5)
+	@Pattern(regexp = "[0-9]{5}", message = "n'\'oubliez pas d'\'entrer votre code postal")
+	@Column(name="codePostal", length=5)
 	private int CodePostal;
 	
 	@NotBlank
-	@Column(length = 40)
+	@Pattern(regexp = "(?i)[a-z- ]{1,45}", message = "{Veuillez ajouter votre ville}")
+	@Column(length = 50)
 	private String ville;
 	
 	@NotBlank
-	@Column(length = 10)
+	@Column(length = 5)
 	private int numero;
 	
 	@NotBlank
+	@Enumerated(EnumType.STRING)
 	private String typeRue;
 	
-	
+	@NotBlank
+	@Pattern(regexp = "(?i)[a-z- ]{1,10}", message = "{Veuillez remplir le complement}")
 	private String complement;
 	
 	
@@ -37,71 +47,57 @@ public class Adresse {
 	
 	
 	
+	
+	
+	
+	
+	@OneToMany(mappedBy="Adresse")
+	private List<Utilisateur> utilisateur;
+	
+	
+	
+	
+	
+	
 	public Long getId() {
 		return id;
 	}
-
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-
 	public int getCodePostal() {
 		return CodePostal;
 	}
-
-
 	public void setCodePostal(int codePostal) {
 		CodePostal = codePostal;
 	}
-
-
 	public String getVille() {
 		return ville;
 	}
-
-
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
-
-
 	public int getNumero() {
 		return numero;
 	}
-
-
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
-
-
 	public String getTypeRue() {
 		return typeRue;
 	}
-
-
 	public void setTypeRue(String typeRue) {
 		this.typeRue = typeRue;
 	}
-
-
 	public String getComplement() {
 		return complement;
 	}
-
-
 	public void setComplement(String complement) {
 		this.complement = complement;
 	}
-
-
 	public String getPrefixe() {
 		return prefixe;
 	}
-
-
 	public void setPrefixe(String prefixe) {
 		this.prefixe = prefixe;
 	}

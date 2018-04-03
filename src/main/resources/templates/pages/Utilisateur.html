@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" >
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 th:text="${mav}"> </h1>
+
+<div>
+	<ul>
+	<li th:text="${carnet.id}"></li>
+	<li th:text="${carnet.civilite}">civilite</li>
+	<li th:text="${carnet.nom}">nom </li>
+	<li th:text="${carnet.prenom}">prenom</li>
+	<li th:text="${carnet.dateDeNaissance}">dateDeNaissance</li>
+	<li th:text="${carnet.tel}">tel</li>
+	<li th:text="${carnet.email}">email</li>
+	<li th:text="${carnet.cp}">cp</li>
+	<li th:text="${carnet.ville}">ville</li>
+	
+	</ul>
+	
+	
+	
+	
+</div>
+</body>
+</html>
