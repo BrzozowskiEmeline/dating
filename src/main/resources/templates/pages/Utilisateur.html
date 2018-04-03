@@ -9,6 +9,7 @@
 
 	<form th:action="@{/formulaire}" th:object="${Utilisateur}" method="post">
 	
+	
 		<label for="emailUtilisateur">Email</label> <input type=text id="emailUtilisateur" th:field="*{emailUtilisateur}"></br>
 		<p th:if="${#fields.hasErrors('emailUtilisateur')}" th:errors="*{emailUtilisateur}"></p><br>
 	 
