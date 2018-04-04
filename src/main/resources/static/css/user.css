@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+body{
+	background:#c0c0c0;
+	color: #008080;
+}
+h1{
+	text-align: center;
+	
+}
+
+img{
+	display: block;
+    margin-left: auto;
+    margin-right: auto ;
+ 	width:50em;
+	
+}
+
+input:required{
+	margin:10px;;
+	
+}
+div{
+		font-size:18px;
+		
+}
+label{
+	display: inline-block;
+    width: 15%;
+}
+select{
+	display: inline-block;
+    width: 15%;
+}

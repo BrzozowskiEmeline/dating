@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" >
-
+<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
 <head>
-<link rel="stylesheet" href="css/index.css">
+
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-<h1>TEst Hello World =)</h1>
-<h1 th:text="${key}"> hello</h1>
+<h1> Site de Rencontre:</h1>
 
+	<form th:action="@{/formulaire}" method="get"> <!-- La age d'acceuil va nous envoyer sur le formulaire -->
+	<input type="submit" value="S'inscrire">
+	</form>
+<h1 th:text="${hello}"></h1>
+
+<img src="img/couple.png">
 </body>
 </html>	

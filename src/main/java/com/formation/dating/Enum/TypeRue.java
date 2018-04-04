@@ -2,7 +2,7 @@ package com.formation.dating.Enum;
 
 public enum TypeRue {
 
-	A("Allee"),C("Chemin"),I("Impasse"),P("Place"),R("Route"),Av("Avenue"),B("Boulevard");
+	Allée("Allee"),Avenue("Avenue"),Chemin("Chemin"),Impasse("Impasse"),Place("Place"),Route("Route"),Chaussée("Chaussée"),Boulevard("Boulevard"),Lieudit("Lieu-dit");
 	
 	
 	private String rue;

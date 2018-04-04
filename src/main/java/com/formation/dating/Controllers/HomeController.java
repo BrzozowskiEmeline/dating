@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class Home {
+public class HomeController {
 	
 	@RequestMapping("/home")
 	@ResponseBody
 	public String index() {
-		return "<h1>home </h1>";
+		return "<h1>home</h1>";
 	}
 
-	@GetMapping("/test")
-	public String index2(@RequestParam(required = false, defaultValue = "defaut") String name, Model model) {
-		model.addAttribute("key", name);
+	@GetMapping("/")
+	public String index2(@RequestParam(required = false, defaultValue = "Bienvenue") String name, Model model) {
+		model.addAttribute("hello", name);
 		return "index";
 	}
 	
-
+	
 
 }

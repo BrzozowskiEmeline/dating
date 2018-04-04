@@ -6,8 +6,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -25,7 +23,6 @@ import com.formation.dating.Enum.Sexe;
 public class Utilisateur {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String emailUtilisateur;
 	
 	@NotBlank
@@ -40,7 +37,7 @@ public class Utilisateur {
 	
 	@NotBlank
 	@DateTimeFormat
-	@Column(columnDefinition="date", name="birthday", length=5 )
+	@Column(columnDefinition="date", name="birthday", length=5)
 	private int dateDeNaissance;
 	
 	

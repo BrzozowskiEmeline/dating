@@ -25,6 +25,9 @@ public class Situation {
 	private String statutPerso;
 	
 	@NotBlank
+	private int NbreEnfant;
+	
+	@NotBlank
 	private String orientation;
 	
 	@NotBlank
@@ -40,8 +43,8 @@ public class Situation {
 	
 	@OneToMany(mappedBy="situation")
 	private List<Utilisateur> utilisateurs;
- 	
-	
+ 
+
 	public Long getId() {
 		return id;
 	}
@@ -59,6 +62,12 @@ public class Situation {
 	}
 	public void setStatutPerso(String statutPerso) {
 		this.statutPerso = statutPerso;
+	}
+	public int getNbreEnfant() {
+		return NbreEnfant;
+	}
+	public void setNbreEnfant(int nbreEnfant) {
+		NbreEnfant = nbreEnfant;
 	}
 	public String getOrientation() {
 		return orientation;
@@ -84,30 +93,30 @@ public class Situation {
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
-
-
-
-
-
-
-
-
-
-	public Situation(Long id, String statutPro, String statutPerso, String orientation, String fumeur, String alcool,
-			int numero) {
+	public List<Utilisateur> getUtilisateurs() {
+		return utilisateurs;
+	}
+	public void setUtilisateurs(List<Utilisateur> utilisateurs) {
+		this.utilisateurs = utilisateurs;
+	}
+	
+	public Situation(Long id,
+			@NotBlank @Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{ Champs vide}") String statutPro,
+			@NotBlank @Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{ Champs vide}") String statutPerso,
+			@NotBlank int nbreEnfant, @NotBlank String orientation, @NotBlank String fumeur, @NotBlank String alcool,
+			@NotBlank @Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{ Champs vide}") int numero,
+			List<Utilisateur> utilisateurs) {
 		super();
 		this.id = id;
 		this.statutPro = statutPro;
 		this.statutPerso = statutPerso;
+		NbreEnfant = nbreEnfant;
 		this.orientation = orientation;
 		this.fumeur = fumeur;
 		this.alcool = alcool;
 		this.numero = numero;
+		this.utilisateurs = utilisateurs;
 	}
-
-
-
-
 	public Situation() {
 		
 	}

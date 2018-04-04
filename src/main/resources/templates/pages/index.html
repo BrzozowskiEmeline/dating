@@ -1,20 +1,23 @@
-<!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<div>
-<ul>
-		<li th:text="${index.nom}">Nom</li>
-		<li th:text="${index.prenom}">Prenom</li>
-		<li th:text="${index.dateDeNaissance}">dateDeNaissance</li>
-		<li th:text="${index.sexe}">sexe</li>
-	</ul>
-	
-	</div>
-	
-
-</body>
-</html>
+<!doctype html>
+ <html lang=fr xmlns:th="http://www.thymeleaf.org">
+ <head>
+     <title th:text="${title}"></title>
+     <th:block th:replace="fragments/head"></th:block>
+ </head>
+ <body>
+ <div class="container-fluid">
+     <!--header-->
+     <th:block th:replace="fragments/header :: header"></th:block>
+     <!--header-->
+ 
+-    <div th:if="${flag}">
+-        <th:block th:replace="${flag}"></th:block>
+-    </div>
+-
+-
+     <!--footer-->
+     <th:block th:replace="fragments/footer"></th:block>
+     <!--footer-->
+ </div>
+ </body>
+ </html>
