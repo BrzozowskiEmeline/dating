@@ -7,4 +7,6 @@ img{
 }
 h1,form{
 	text-align:center;
+	border:2px black hidden;
+
 }

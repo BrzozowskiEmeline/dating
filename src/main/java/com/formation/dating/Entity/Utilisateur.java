@@ -47,7 +47,7 @@ public class Utilisateur {
 	
 	@NotNull(message = "N'oubliez pas votre Mot de passe")
 	@Column(length =10)
-	@Pattern(regexp = "(?i)[a-z ]{8,32}")
+	@Pattern(regexp = "(?i)[a-z ]{0,32}")
 	private String motDePasse;
 	
 	@NotNull(message = "Faite nous une petite descritpion ")

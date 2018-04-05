@@ -12,21 +12,29 @@ import com.formation.dating.Repository.UtilisateurRepository;
 public class UtilisateurService {
 	
 	private final UtilisateurRepository ur;
+//	private final SituationRepository sr;
+//	private final CentreInteretRepository cir;
 
-	@Autowired
-	public UtilisateurService(UtilisateurRepository ur) {
-		super();
-		this.ur = ur;
-	}
 	
-	
+
+
+
 	public List<Utilisateur> readAll () {
 		return ur.findAll();
 		
 	}
-	
+	@Autowired
+	public UtilisateurService(UtilisateurRepository ur) {
+		super();
+		this.ur = ur;
+//		this.sr = sr;
+//		this.cir = cir;
+	}
+
 	public void add (Utilisateur utilisateur) {
 		ur.save(utilisateur);
+//		sr.save(situation);
+//		cir.save(centreInteret);
 	}
 	
 

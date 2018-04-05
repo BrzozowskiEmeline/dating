@@ -17,13 +17,10 @@ public class Situation {
 	private Long id;
 	
 	
-	@Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{Attention Champs vide}")
-	private String statutPro;
-	
-	
-	@Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{ Champs vide}")
+	//@Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{ Champs vide}")
 	private String statutPerso;
 	
+	private String statutPro;
 	
 	private int NbreEnfant;
 	
@@ -110,7 +107,7 @@ public class Situation {
 		this.id = id;
 		this.statutPro = statutPro;
 		this.statutPerso = statutPerso;
-		NbreEnfant = nbreEnfant;
+		this.NbreEnfant = nbreEnfant;
 		this.orientation = orientation;
 		this.fumeur = fumeur;
 		this.alcool = alcool;

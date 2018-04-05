@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org" >
-<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
+<html xmlns:th="http://thymeleaf.org">
+<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}" />
 <head>
 
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-<h1> Site de Rencontre:</h1>
+	<h1>Site de Rencontre:</h1>
 
-	<form th:action="@{/formulaire}" method="get"> <!-- Lpage d'acceuil va nous envoyer sur le formulaire -->
-	<input type="submit" value="S'inscrire">
+	<form th:action="@{/formulaire}" method="get">
+		<!-- Lpage d'acceuil va nous envoyer sur le formulaire -->
+		<input type="submit" value="S'inscrire">
+
 	</form>
-<h1 th:text="${hello}"></h1>
+		<!-- //<h1 th:text="|${session."></h1> -->
+<form th:action="@{/connecter}" method="get">
+		<input type="submit" value="Se connecter">
 
-<img src="img/couple.png">
+</form>
+
+
+	<img src="img/couple.png">
 </body>
-</html>	
+</html>

@@ -69,4 +69,7 @@ public class CentreInteret {
 	public CentreInteret() {
 		
 	}
+	
+	
+	
 }

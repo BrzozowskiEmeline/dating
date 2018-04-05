@@ -6,21 +6,148 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1> Site de Rencontre: Compte créé</h1>
+<h1> Site de Rencontre:  </h1>
 
-	<h2>Creation du compte utilisateur :</h2>
-		<label for="pseudo">Pseudo</label> 
-		<output th:text="*{utilisateur.pseudo}">
+	<h2>Votre Compte:</h2>
+		<label for="pseudo">Pseudo :</label> 
+		<output th:text="*{utilisateur.pseudo}"></output><br>
 		
-
+		<label for="emailUtilisateur">Email :</label> 
+		<output th:text="*{utilisateur.emailUtilisateur}">></output><br>
       
- 	<label>Email :</label> 
- 	<input th:type='email' th:field="*{utilisateur.emailUtilisateur}">	<br>
-		
-	<label for="statutPerso">Status Perso :</label> 
-	  	<input th:type='statutPerso' th:field="*{utilisateur.emailUtilisateur}">	<br>
+ 		
+		<label>Status Perso :</label> 
+	  	<output th:text="*{situation.statutPerso}"></output><br>
 
 	
+	<label for="NbreEnfant">Nombre d'enfant:</label> 
+	<output type=text id="loisir" th:text="*{situation.NbreEnfant}"></output><br>
+	
+		
+	<label for="statutPro">Status Pro :</label>
+	<output type='text' id="statutPro" th:text="*{situation.statutPro}"></output>
+	
+ 	
+ 		
+ 	
+		
+		
+		<h2>Informations : </h2>
+		<label for="nom">Nom :</label>
+		<output type=text id="nom" th:text="*{utilisateur.nom}"></output><br>
+		
+		
+		<label for="prenom">Prenom :</label> <output type=text id="prenom" th:text="*{utilisateur.prenom}"></output><br>
+		
+
+		<label for="dateDeNaissance">Date De Naissance :</label><output type="date" name="DateDeNaissance"  th:text="*{utilisateur.dateDeNaissance}"></output><br>
+		
+		
+		<label for="numeroTel">Numero de Telephone :</label><output type='number' id="numeroTel" th:text="*{utilisateur.numeroTel}"></output><br>
+		
+				
+		
+		
+	
+		<br><div><label> Adresse :</label><br></div>
+		
+		<label for="typeRue">Type de rue : </label> 
+		<output  th:text="${adresse.typeRue}"></output>  
+ 		<br>
+ 		
+ 		
+		<label for="name"> Nom de Rue:</label> 
+		<output type=text  th:text="*{adresse.nom}" ></output><br>
+					
+		
+ 		
+ 		<label for="prefixe">Prefixe :</label> 
+		<output name="prefixe" th:text="${adresse.prefixe}"> </output> 
+	
+ 		
+		<label for="complement"> Complement:</label> <output type=text id="complement" th:text="*{adresse.complement}"></output><br>
+		
+		
+		
+		<label for="ville">Ville :</label> <output type='text' id="ville" th:text="*{adresse.ville}"></output><br>
+		
+	
+		<label for="CodePostal">CodePostal :</label> <output type='text' id="CodePostal" th:text="*{adresse.CodePostal}"><br></output>
+			
+	
+
+		
+		
+		<h2>Informations Perso:</h2>
+		<label for="couleurYeux">Couleur des yeux :</label> 
+		<output name="couleurYeux" th:text="${apparence.couleurYeux}">  
+		
+ 		</output><br>	
+ 		 		<br>
+ 		<label for="couleurCheveux">Couleur des Cheveux :</label> 
+		<output name="couleurCheveux" th:text="${apparence.couleurCheveux}">  <br>
+		
+ 		</output><br> 
+ 		<label>Autre :</label><output type="text" name="Autre" placeholder="Autre couleur" ></output><br>
+ 		
+ 		<br>
+ 		<br><label for="typeCheveux">Type de Cheveux :</label> 
+		<output name="typeCheveux" th:text="${apparence.typeCheveux}">  
+	
+ 		</output><br>
+ 		 
+ 		
+ 		<br><label for="taille">Taille :</label> 
+ 		<output type='text' id="taille" th:text="*{apparence.taille}"></output><br>
+		
+		
+	 	<label for="masse">Poids :</label> 
+	 	<output type='text' id="masse" th:text="*{apparence.masse}"th:placeholder="#{apparence.masse}"></output><br>
+
+
+		<label for="origine">Origine : </label> 
+		<output type='text' id="origine" th:text="*{apparence.origine}" th:placeholder="#{apparence.origine}"></output><br>
+		
+	
+		<label for="fumeur">Fumeur :</label> 
+		<output name="fumeur" th:text="${situation.fumeur}">  
+ 		</output><br>
+ 		
+ 		<label for="alcool">Alcool :</label> 
+		<output name="alcool" th:text="${situation.alcool}">  
+ 		</output><br>
+		
+		<label for="orientation">Orientation :</label> 
+		<output name="orientation" th:text="${situation.orientation}">  
+ 		</output><br>
+ 		
+ 		
+ 		
+ 		<br><label for="description">Description : </label>  <textarea cols="40" rows="4" th:text="*{utilisateur.description}"> Description</textarea>
+		
+ 		
+ 		
+ 		<h2>Centre d'interet :</h2>
+ 		<label for="sport">Sport :</label> <output type=text id="sport" th:text="*{centreInteret.sport}"></output><br>
+		
+			
+		<label for="loisir">Loisir :</label> <output type=text id="loisir" th:text="*{centreInteret.loisir}"></output><br>
+		
+ 		<label for="typeMultimedia">Type de Multimedia</label> <br>
+		<output name="typeMultimedia" th:text="${multimedia.typeMultimedia}">  
+ 		</output><br>
+ 
+ 		<label for="titre">Titre :</label> <output type=text id="genre" th:text="*{multimedia.titre}"></output>
+		<br>
+		
+ 		<label for="genre">Genre :</label> <output type=text id="genre" th:text="*{multimedia.genre}"></output>
+		<br>
+		
+		<label for="artiste">Artiste :</label> <output type=text id="artiste" th:text="*{multimedia.artiste}"required></output>
+		<br>
+		
+		
+		
 
 
 </body>
