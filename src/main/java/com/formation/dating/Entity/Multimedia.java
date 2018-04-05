@@ -20,15 +20,15 @@ public class Multimedia {
 	private String typeMultimedia;
 	
 	@NotBlank
-	@Pattern(regexp = "(?i)[a-z- \\- à-ÿ ]{1,150}", message = "{ Champs vide}")
+	@Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{ Champs vide}")
 	private String genre;
 	
 	@NotBlank
-	@Pattern(regexp = "(?i)[a-z- \\- à-ÿ]{1,150}", message = "{ Champs vide}")
+	@Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{ Champs vide}")
 	private String titre;
 	
 	@NotBlank
-	@Pattern(regexp = "(?i)[a-z- \\- à-ÿ]{1,150}", message = "{ Champs vide}")
+	@Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{ Champs vide}")
 	private String artiste;
 	
 	

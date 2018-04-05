@@ -16,15 +16,15 @@ public class Situation {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
-	@Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{ Champs vide}")
+	
+	@Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{Attention Champs vide}")
 	private String statutPro;
 	
-	@NotBlank
+	
 	@Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{ Champs vide}")
 	private String statutPerso;
 	
-	@NotBlank
+	
 	private int NbreEnfant;
 	
 	@NotBlank
@@ -36,8 +36,8 @@ public class Situation {
 	@NotBlank
 	private String alcool;
 	
-	@NotBlank
-	@Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{ Champs vide}")
+	
+	
 	private int numero;
 	
 	

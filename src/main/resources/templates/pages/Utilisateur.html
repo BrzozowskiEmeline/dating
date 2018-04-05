@@ -31,13 +31,15 @@
 		
 	<label for="statutPerso">Status Perso :</label> 
 	<select name="statutPerso" th:field="${situation.statutPerso}">  
-	<option th:each="c: ${T(com.formation.dating.Enum.statutPerso).values()}" th:value="${c}" th:name="${c}"/> 
+
+	<option th:each="c: ${T(com.formation.dating.Enum.statutPerso).values()}" th:value="${c}" th:name="${c}" th:text="${c}"/> 
  	</select><br>
+ 	
  	<label for="NbreEnfant">Nbre d'enfant:</label> <input type=text id="loisir" th:field="*{situation.NbreEnfant}">
 		<p th:if="${#fields.hasErrors('situation.NbreEnfant')}" th:errors="*{situation.NbreEnfant}"></p><br>
 		
 	<label for="statutPro">Status Pro :</label><input type='text' id="statutPro" th:field="*{situation.statutPro}">
-	<p th:if="${#fields.hasErrors('situation.statutPro')}" th:errors="*{situation.statutPro}"></p><br>
+	<p th:if="${#fields.hasErrors('situation.statutPro')}" th:errors="*{situation.statutPro}"></p>
  	
  	
  		
@@ -51,7 +53,7 @@
 		<label for="prenom">Prenom :</label> <input type=text id="prenom" th:field="*{utilisateur.prenom}">
 		<p th:if="${#fields.hasErrors('utilisateur.prenom')}" th:errors="*{utilisateur.prenom}"></p><br>
 
-		<label for="dateDeNaissance">Date De Naissance</label><input type="date" name="DateDeNaissance" title="Date(aaaa-mm-jj)" value="2010-11-22" th:field="*{utilisateur.dateDeNaissance}">
+		<label for="dateDeNaissance">Date De Naissance</label><input type="date" name="DateDeNaissance"  th:field="*{utilisateur.dateDeNaissance}">
 		<p th:if="${#fields.hasErrors('utilisateur.dateDeNaissance')}" th:errors="*{utilisateur.dateDeNaissance}"></p><br>
 		
 		<label for="numeroTel">Numero de Telephone :</label><input type='number' id="numeroTel" th:field="*{utilisateur.numeroTel}">
@@ -61,8 +63,8 @@
 		
 	
 		<div><br><label> Adresse :</label><br></div>
-		<label for="numero"> Nom de Rue:</label> <input type=text id="numero" th:field="*{adresse.numero}"><br>
-		<p th:if="${#fields.hasErrors('adresse.numero')}" th:errors="*{adresse.numero}"></p>
+		<label for="name"> Nom de Rue:</label> <input type=text  th:field="*{adresse.nom}"><br>
+		<p th:if="${#fields.hasErrors('adresse.nom')}" th:errors="*{adresse.nom}"></p>
 		
 		
 		<label for="typeRue">Type de rue</label> 

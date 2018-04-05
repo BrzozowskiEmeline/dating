@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" >
+<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> Site de Rencontre: Compte créé</h1>
+
+	<h2>Creation du compte utilisateur :</h2>
+		<label for="pseudo">Pseudo</label> 
+		<output th:text="*{utilisateur.pseudo}">
+		
+
+      
+ 	<label>Email :</label> 
+ 	<input th:type='email' th:field="*{utilisateur.emailUtilisateur}">	<br>
+		
+	<label for="statutPerso">Status Perso :</label> 
+	  	<input th:type='statutPerso' th:field="*{utilisateur.emailUtilisateur}">	<br>
+
+	
+
+
+</body>
+</html>

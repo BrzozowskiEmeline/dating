@@ -1,10 +1,13 @@
 package com.formation.dating.Controllers;
 
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,7 +28,7 @@ public class UtilisateurController {
 
 	@Autowired
 	public UtilisateurController(UtilisateurService us) {
-		super();
+		
 		this.us = us;
 	}
 	
@@ -47,21 +50,58 @@ public class UtilisateurController {
 
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/result")
-	
 	public String getform(
 			@ModelAttribute("utilisateur") Utilisateur utilisateur,BindingResult resultUtilisateur,
-			@Validated @ModelAttribute("apparence") Apparence apparence,BindingResult resultApparence,
-			@Validated @ModelAttribute("centreInteret") CentreInteret centreInteret,BindingResult resultCentreInteret,
-			@Validated @ModelAttribute("situation") Situation situation,BindingResult resultSituation,
-			@Validated @ModelAttribute("adresse") Adresse adresse,BindingResult resultadresse,
-			@Validated @ModelAttribute("multimedia") Multimedia multimedia,BindingResult resultmultimedia,
-			@Validated @ModelAttribute("photo") Photo photo,BindingResult resultphoto
+			@Valid @ModelAttribute("apparence") Apparence apparence,BindingResult resultApparence,
+			@Valid @ModelAttribute("centreInteret") CentreInteret centreInteret,BindingResult resultCentreInteret,
+			@Valid @ModelAttribute("situation") Situation situation,BindingResult resultSituation,
+			@Valid @ModelAttribute("adresse") Adresse adresse,BindingResult resultadresse,
+			@Valid @ModelAttribute("multimedia") Multimedia multimedia,BindingResult resultmultimedia,
+			@Valid @ModelAttribute("photo") Photo photo,BindingResult resultphoto
 			
-			)
+			) {
+//	if (resultUtilisateur.hasErrors() || resultadresse.hasErrors() ||
+//			resultApparence.hasErrors() || resultCentreInteret.hasErrors() ||
+//			resultSituation.hasErrors()||resultphoto.hasErrors() ) {
+//
+//			return "pages/Utilisateur";
+//			}
+//	utilisateur.setAdresse(adresse);
+//	utilisateur.setApparence(apparence);
+//	utilisateur.getCentreInterets().add(centreInterets);
+//	utilisateur.setSituation(situation);
+	/*utilisateur.getPhotos().add(photo);*/
+//	as.create(adresse);
+//	aps.create(apparence);
+//	cs.create(centreInterets);
+//	ss.create(situation);
+us.add(utilisateur);
+	return "pages/inscriptionfaite";
 	
-	{
-				return "pages/index" ;
 	}
+	@RequestMapping(method= RequestMethod.POST, value = "/inscription")
+	public void add() {
+		us.add(new Utilisateur());
+		
+	}
+	@RequestMapping(method = RequestMethod.GET, value = "/inscriptionfaite")
+	public List<Utilisateur> readAll(){
+		return us.readAll();
+		
+	}
+
+	
+		
+	
+		//@PostMapping("/login")
+		//public String login(@ModelAttribute Utilisateur utilisateur, RedirectAttributes attributes, HttpSession HttpSession )
+//	String motDePasse = 
+//	Utilisateur utilisateur =
+//	if(utilisateur==null) {
+//		
+//	}
 	
 	
+
 }
+

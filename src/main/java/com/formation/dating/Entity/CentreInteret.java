@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 @Entity
@@ -17,12 +16,12 @@ public class CentreInteret {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
-	@Pattern(regexp = "(?i)[a-z- \\- à-ÿ]{1,150}", message = "{ Champs vide}")
+	
+	@Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{ Champs vide}")
 	private String sport;
 	
-	@NotBlank
-	@Pattern(regexp = "(?i)[a-z- \\- à-ÿ]{1,150}", message = "{ Champs vide}")
+	
+	@Pattern(regexp = "(?i)[a-z- ]{1,150}", message = "{ Champs vide}")
 	private String loisir;
 	
 	

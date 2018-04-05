@@ -18,7 +18,7 @@ public class Apparence {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
+	
 	@Column(length= 3)
 	private int taille;
 	
@@ -38,8 +38,7 @@ public class Apparence {
 	@Pattern(regexp = "(?i)[a-z- ]{1,10}", message = "{ Champs vide}")
 	private String typeCheveux;
 	
-	@NotBlank
-	@Pattern(regexp = "(?i)[0-9 ]{1,3}", message = "{ Champs vide}")
+	
 	private float masse;
 	
 	

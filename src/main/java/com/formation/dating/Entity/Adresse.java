@@ -25,26 +25,26 @@ public class Adresse {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
-	@Pattern(regexp = "[0-9]{5}", message = "n'\'oubliez pas d'\'entrer votre code postal")
+
+	
 	@Column(name="codePostal", length=5)
 	private int CodePostal;
 	
-	@NotBlank
+	
 	@Pattern(regexp = "(?i)[a-z- ]{1,45}", message = "{Veuillez ajouter votre ville}")
 	@Column(length = 50)
 	private String ville;
 	
+	
 	@NotBlank
-	@Column(length = 5)
-	private int numero;
+	private String nom;
 	
 	@NotNull(message = "Message d'\'erreur")
 	@Enumerated(EnumType.STRING)
 	@Column(length = 8)
 	private TypeRue typeRue;
 	
-	@NotBlank
+	
 	@Pattern(regexp = "(?i)[a-z- ]{1,10}", message = "{Veuillez remplir le complement}")
 	private String complement;
 	
@@ -83,11 +83,18 @@ public class Adresse {
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
-	public int getNumero() {
-		return numero;
+
+	public String getNom() {
+		return nom;
 	}
-	public void setNumero(int numero) {
-		this.numero = numero;
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public List<Utilisateur> getUtilisateurs() {
+		return utilisateurs;
+	}
+	public void setUtilisateurs(List<Utilisateur> utilisateurs) {
+		this.utilisateurs = utilisateurs;
 	}
 	public TypeRue getTypeRue() {
 		return typeRue;
@@ -112,13 +119,13 @@ public class Adresse {
 
 
 	
-	public Adresse(Long id, @NotBlank int codePostal, @NotBlank String ville, @NotBlank int numero,
+	public Adresse(Long id, @NotBlank int codePostal, @NotBlank String ville, @NotBlank String nom,
 		@NotBlank TypeRue typeRue, String complement, Prefixe prefixe) {
 	super();
 	this.id = id;
 	CodePostal = codePostal;
 	this.ville = ville;
-	this.numero = numero;
+	this.nom = nom;
 	this.typeRue = typeRue;
 	this.complement = complement;
 	this.prefixe = prefixe;

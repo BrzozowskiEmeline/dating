@@ -25,20 +25,19 @@ public class Utilisateur {
 	@Id
 	private String emailUtilisateur;
 	
-	@NotBlank
-	@Pattern(regexp = "(?i)[a-z]{2,50}", message = "{com.example.demo.annuaire.contraint.nom.message}")
-	@Column(length = 30)
+	@NotNull
+	@Column(length = 100)
 	private String nom;
 	
 	@NotBlank
-	@Pattern(regexp = "(?i)[a-z\\- à-ÿ]{2,100}", message = "{com.example.demo.annuaire.contraint.prenom.message}")
+	@Pattern(regexp = "(?i)[a-z  \\à-ÿ]{2,100}", message = "{com.formation.dating.contraint.prenom.message}")
 	@Column(length = 50)
 	private String prenom;
 	
-	@NotBlank
+	
 	@DateTimeFormat
-	@Column(columnDefinition="date", name="birthday", length=5)
-	private int dateDeNaissance;
+	@Column(columnDefinition="date", name="dateDeNaissance")
+	private String dateDeNaissance;
 	
 	
 	@NotNull(message = "Message d'\'erreur")
@@ -48,7 +47,7 @@ public class Utilisateur {
 	
 	@NotNull(message = "N'oubliez pas votre Mot de passe")
 	@Column(length =10)
-	@Pattern(message = "{Le mot de passe ne dois pas dépasser 10 caractères}", regexp = "(?i)[a-z\\\\- à-ÿ]{2,10}")
+	@Pattern(regexp = "(?i)[a-z ]{8,32}")
 	private String motDePasse;
 	
 	@NotNull(message = "Faite nous une petite descritpion ")
@@ -56,10 +55,10 @@ public class Utilisateur {
 	private String description;
 	
 	@NotNull(message = "Attention un pseudo est recommandé ")
-	@Column(length =50)
+	@Pattern(regexp = "(?i)[a-z ]{2,32}")
 	private String pseudo;
 	
-	@Pattern(message = "{com.example.demo.annuaire.contraint.Tel.message}", regexp = "[0-9]{4,14}")
+
 	@Column(length = 10)
 	private int numeroTel;
 	
@@ -108,10 +107,10 @@ public class Utilisateur {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public int getDateDeNaissance() {
+	public String getDateDeNaissance() {
 		return dateDeNaissance;
 	}
-	public void setDateDeNaissance(int dateDeNaissance) {
+	public void setDateDeNaissance(String dateDeNaissance) {
 		this.dateDeNaissance = dateDeNaissance;
 	}
 	public Sexe getSexe() {
@@ -162,7 +161,7 @@ public class Utilisateur {
 	
 	
 	
-	public Utilisateur(String emailUtilisateur, String nom, String prenom, int dateDeNaissance, Sexe sexe,
+	public Utilisateur(String emailUtilisateur, String nom, String prenom, String dateDeNaissance, Sexe sexe,
 			String motDePasse, String description, String pseudo, int numeroTel, int type) {
 		super();
 		this.emailUtilisateur = emailUtilisateur;
