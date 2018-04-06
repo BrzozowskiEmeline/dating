@@ -23,6 +23,7 @@ import com.formation.dating.Entities.Multimedia;
 import com.formation.dating.Entities.Photo;
 import com.formation.dating.Entities.Situation;
 import com.formation.dating.Entities.Utilisateur;
+import com.formation.dating.Enum.Sexe;
 import com.formation.dating.Services.AdresseService;
 import com.formation.dating.Services.ApparenceService;
 import com.formation.dating.Services.CentreInteretService;
@@ -158,7 +159,8 @@ public class UtilisateurController {
 	
 	@GetMapping("/utilisateurs")  // ici utiliser un Model dc faitre avec un addattribute / sinon si c'est un ModelAndView utiliser une list avc return comme annuaire
 	public String getAllUtilisateur( Model model) {
-		
+		model.addAttribute("sexeF", Sexe.F);
+		model.addAttribute("sexeH", Sexe.H);
 		model.addAttribute("utilisateurs", us.getAllUtilisateurs());
 		return "pages/utilisateurs";
 	}

@@ -2,14 +2,36 @@
 <html xmlns:th="http://thymeleaf.org">
 <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}" />
 <head>
+<style>
+
+p{
+	text-align: left;
+}
+</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+
+
+
+	<div> 
+	<p>Femme :</p>
+		<ul th:each="utilisateur :${utilisateurs}">
+			<p th:text="${utilisateur.sexe==T(com.formation.dating.Enum.Sexe).F} ? ${utilisateur.pseudo} "></p>
+		</ul>
+
+</div>
+
 	<div>
-	<ul th:each="utilisateur :${utilisateurs}">
-	<li th:text="${utilisateur.pseudo}"></li>
-	</ul>
-	</div>
+	<p>Homme :</p>
+		<ul th:each="utilisateur :${utilisateurs}">
+			<p th:text="${utilisateur.sexe==T(com.formation.dating.Enum.Sexe).H} ? ${utilisateur.pseudo} "></p>
+		</ul>
+
+</div>
+	<form th:action="@{/}" method="get">   <!--  renvoie sur la page du login/la connexion --> 
+		<input type="submit" value="Retour page d'acceuil">
+</form>
 </body>
 </html>
