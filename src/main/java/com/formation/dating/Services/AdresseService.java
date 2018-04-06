@@ -21,8 +21,8 @@ public class AdresseService {
 
 	
 	//ajout des contacts
-		public void add(Adresse adress) {
-			ar.save(adress);
+		public void add(Adresse adresse) {
+			ar.save(adresse);
 		}
 		
 		//affichage 

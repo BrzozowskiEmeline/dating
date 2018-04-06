@@ -161,6 +161,48 @@ public class Utilisateur {
 	
 	
 	
+	public Adresse getAdresse() {
+		return adresse;
+	}
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
+	public List<Photo> getPhotos() {
+		return photos;
+	}
+	public void setPhotos(List<Photo> photos) {
+		this.photos = photos;
+	}
+	public Apparence getApparence() {
+		return apparence;
+	}
+	public void setApparence(Apparence apparence) {
+		this.apparence = apparence;
+	}
+	public List<CentreInteret> getCentreInterets() {
+		return centreInterets;
+	}
+	public void setCentreInterets(List<CentreInteret> centreInterets) {
+		this.centreInterets = centreInterets;
+	}
+	public Multimedia getMultimedia() {
+		return multimedia;
+	}
+	public void setMultimedia(Multimedia multimedia) {
+		this.multimedia = multimedia;
+	}
+	public Situation getSituation() {
+		return situation;
+	}
+	public void setSituation(Situation situation) {
+		this.situation = situation;
+	}
+	public List<Utilisateur> getFavoris() {
+		return favoris;
+	}
+	public void setFavoris(List<Utilisateur> favoris) {
+		this.favoris = favoris;
+	}
 	public Utilisateur(String emailUtilisateur, String nom, String prenom, String dateDeNaissance, Sexe sexe,
 			String motDePasse, String description, String pseudo, int numeroTel, int type) {
 		super();
