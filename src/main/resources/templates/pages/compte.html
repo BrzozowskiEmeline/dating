@@ -6,12 +6,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1> Votre compte :  </h1>
-<label for="nom">Nom :</label>
-		<output type=text id="nom" th:text="*{utilisateur.nom}"></output><br>
-		
-		
-		<label for="prenom">Prenom :</label> <output type=text id="prenom" th:text="*{utilisateur.prenom}"></output><br>
+	<h1>
+		Bienvenue sur votre compte :
+		<br><output type=text id="prenom" th:text="*{utilisateur.prenom}"></output><br>
+		<output type=text id="nom" th:text="*{utilisateur.nom}"></output>
+
+	</h1>
+
+
+
 
 </body>
 </html>

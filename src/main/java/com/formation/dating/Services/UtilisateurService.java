@@ -17,12 +17,23 @@ public class UtilisateurService {
 
 	
 
-
-
-	public List<Utilisateur> readAll () {
-		return ur.findAll();
+	// ajoute tout
+		public void setAllUtilisateurs(List<Utilisateur> utilisateur) {
+			ur.saveAll(utilisateur);
+		}
 		
-	}
+		
+		
+		// affichage
+		public List<Utilisateur> getAllUtilisateurs() {
+			return ur.findAll();
+		}
+	
+		
+		
+		
+		
+		
 	@Autowired
 	public UtilisateurService(UtilisateurRepository ur) {
 		super();

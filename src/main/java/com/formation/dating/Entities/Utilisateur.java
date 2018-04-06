@@ -156,10 +156,8 @@ public class Utilisateur {
 		this.emailUtilisateur = emailUtilisateur;
 	}
 
-
-
 	
-	
+	//getter et setter des manyTomany..
 	
 	public Adresse getAdresse() {
 		return adresse;

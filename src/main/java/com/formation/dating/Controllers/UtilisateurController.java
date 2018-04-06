@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +16,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.formation.dating.Entities.*;
-import com.formation.dating.Services.*;
+import com.formation.dating.Entities.Adresse;
+import com.formation.dating.Entities.Apparence;
+import com.formation.dating.Entities.CentreInteret;
+import com.formation.dating.Entities.Multimedia;
+import com.formation.dating.Entities.Photo;
+import com.formation.dating.Entities.Situation;
+import com.formation.dating.Entities.Utilisateur;
+import com.formation.dating.Services.AdresseService;
+import com.formation.dating.Services.ApparenceService;
+import com.formation.dating.Services.CentreInteretService;
+import com.formation.dating.Services.PhotoService;
+import com.formation.dating.Services.SituationService;
+import com.formation.dating.Services.UtilisateurService;
 
 @Controller
 public class UtilisateurController {
@@ -89,12 +101,13 @@ public class UtilisateurController {
 	 
 	
 	
-	@GetMapping("/login") // creation de la page pour entrer email et mDp
+	@GetMapping("/login") // creation du URL login, pour entrer l'email et le mDp. l'html du login est créer ds la connexion.html,
+	//qui elle renvoie a un url connexion. cette URl coonnexion renvoie a la page html compte.
 	public String login() {
 		return "pages/connexion";
 	}
 
-	@RequestMapping(value = "/connexion", method = RequestMethod.POST)  // creation de la rediretion après la co
+	@RequestMapping(value = "/connexion", method = RequestMethod.POST)  // creation de la redirec tion après la co
 	private String connexion(@RequestParam("emailUtilisateur")String emailUtilisateur,
 			@RequestParam("motDePasse") String motDePasse, ModelMap model, HttpSession httpSession) {
 
@@ -123,7 +136,7 @@ public class UtilisateurController {
 	        httpSession.invalidate();
 	        return "pages/logout";
 	    }
-	////////////////////////////////////////////
+	//////////////////////////////Temps de Session//////////////////////////////////////////////
 
 	public void session(Utilisateur utilisateur, HttpSession Httpsession) {
 		String sessionKey = "dating";
@@ -142,6 +155,15 @@ public class UtilisateurController {
 		Httpsession.setMaxInactiveInterval(60 * 30);
 
 	}
+	
+	@GetMapping("/utilisateurs")  // ici utiliser un Model dc faitre avec un addattribute / sinon si c'est un ModelAndView utiliser une list avc return comme annuaire
+	public String getAllUtilisateur( Model model) {
+		
+		model.addAttribute("utilisateurs", us.getAllUtilisateurs());
+		return "pages/utilisateurs";
+	}
+	
+	
 	
 	
 	

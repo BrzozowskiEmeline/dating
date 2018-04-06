@@ -11,6 +11,10 @@
 		<input type="submit" value="Se connecter">
 
 </form>
+<form th:action="@{/}" method="get">   <!--  renvoie sur la page du login/la connexion --> 
+		<input type="submit" value="Retour page d'acceuil">
+</form>
+
 
 	<h2>Votre Compte:</h2>
 		<label for="pseudo">Pseudo :</label> 
@@ -39,6 +43,10 @@
 		<h2>Informations : </h2>
 		<label for="nom">Nom :</label>
 		<output type=text id="nom" th:text="*{utilisateur.nom}"></output><br>
+		
+		
+		
+		
 		
 		
 		<label for="prenom">Prenom :</label> <output type=text id="prenom" th:text="*{utilisateur.prenom}"></output><br>

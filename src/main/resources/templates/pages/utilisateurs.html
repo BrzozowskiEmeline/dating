@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}" />
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+	<ul th:each="utilisateur :${utilisateurs}">
+	<li th:text="${utilisateur.pseudo}"></li>
+	</ul>
+	</div>
+</body>
+</html>

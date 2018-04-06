@@ -19,8 +19,19 @@
 		
 		
 <form th:action="@{/login}" method="get">   <!--  renvoie sur la page du login/la connexion --> 
-		<input type="submit" value="se connecter">
+		<input type="submit" value="Se connecter">
+</form><br>
+
+
+<form th:action="@{/logout}" method="get">   <!--  renvoie sur la page du login/la connexion --> 
+		<input type="submit" value="Se deconnecter">
+</form><br>
+<form th:action="@{/utilisateurs}" method="get">   <!--  renvoie sur la page du login/la connexion --> 
+		<input type="submit" value="Afficher les utilisateurs">
 </form>
+
+
+
 
 
 	<img src="img/couple.png">
