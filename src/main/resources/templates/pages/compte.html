@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" >
+<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> Votre compte :  </h1>
+<label for="nom">Nom :</label>
+		<output type=text id="nom" th:text="*{utilisateur.nom}"></output><br>
+		
+		
+		<label for="prenom">Prenom :</label> <output type=text id="prenom" th:text="*{utilisateur.prenom}"></output><br>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" >
+<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>Bienvenue sur votre Site de Rencontre:</h1>
+	
+
+<form th:action="@{/connexion}" method="post">
+		<h2>Connexion:</h2>
+<label for="emailUtilisateur">Email :</label> 
+		<input th:type='email' name="emailUtilisateur">
+		
+		<br><label for="motDePasse">Mot De Passe :</label> 
+		<input th:type="motDePasse" name="motDePasse" >
+	
+		<input type="submit" value="Se connecter">
+		
+</form>
+
+</body>
+</html>

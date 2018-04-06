@@ -15,19 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.formation.dating.Entities.Adresse;
-import com.formation.dating.Entities.Apparence;
-import com.formation.dating.Entities.CentreInteret;
-import com.formation.dating.Entities.Multimedia;
-import com.formation.dating.Entities.Photo;
-import com.formation.dating.Entities.Situation;
-import com.formation.dating.Entities.Utilisateur;
-import com.formation.dating.Services.AdresseService;
-import com.formation.dating.Services.ApparenceService;
-import com.formation.dating.Services.CentreInteretService;
-import com.formation.dating.Services.PhotoService;
-import com.formation.dating.Services.SituationService;
-import com.formation.dating.Services.UtilisateurService;
+import com.formation.dating.Entities.*;
+import com.formation.dating.Services.*;
 
 @Controller
 public class UtilisateurController {
@@ -64,7 +53,7 @@ public class UtilisateurController {
 		 resultApparence.hasErrors() || resultCentreInteret.hasErrors() ||
 		 resultSituation.hasErrors() ) {
 		
-		 return "pages/Utilisateur"; }
+		 return "pages/Formulaire"; }
 	
 		utilisateur.setAdresse(adresse);
 		utilisateur.setApparence(apparence);
@@ -77,7 +66,7 @@ public class UtilisateurController {
 		ss.add(situation);
 		us.add(utilisateur);
 		
-		return "pages/inscriptionfaite";
+		return "pages/Result";
 
 	}
 	
@@ -91,7 +80,7 @@ public class UtilisateurController {
 		model.addAttribute("adresse", new Adresse());
 		model.addAttribute("multimedia", new Multimedia());
 		model.addAttribute("photo", new Photo());
-		return "pages/Utilisateur";
+		return "pages/Formulaire";
 	}
 
 	
@@ -100,21 +89,21 @@ public class UtilisateurController {
 	 
 	
 	
-	@GetMapping("/login")
+	@GetMapping("/login") // creation de la page pour entrer email et mDp
 	public String login() {
-		return "connexion";
+		return "pages/connexion";
 	}
 
-	@RequestMapping(value = "/connexion", method = RequestMethod.POST)
-	private String connexion(@RequestParam("email") String emailUtilisateur,
+	@RequestMapping(value = "/connexion", method = RequestMethod.POST)  // creation de la rediretion après la co
+	private String connexion(@RequestParam("emailUtilisateur")String emailUtilisateur,
 			@RequestParam("motDePasse") String motDePasse, ModelMap model, HttpSession httpSession) {
 
 		Utilisateur utilisateur = us.findUtilisateurByEmailUtilisateurAndMotDePasse(emailUtilisateur, motDePasse);
 		if (utilisateur == null) {
-			String message = "identifiant ou mot de passe incorrect";
-			model.addAttribute("message", message);
+			String message = "Votre identifiant ou mot de passe est incorrect";
+			model.addAttribute("message", message); 
 
-			return "connexion";
+			return "pages/connexion";
 
 		}
 
@@ -122,7 +111,7 @@ public class UtilisateurController {
 	        String message = "Bienvenue sur votre session";
 	        model.addAttribute("message", message);
 	        model.addAttribute("utilisateur", utilisateur);
-	        return "login";
+	        return "pages/compte";
 	    }
 	    
 	    
@@ -132,9 +121,9 @@ public class UtilisateurController {
 	        String message = "Vous êtes deconnecté";
 	        model.addAttribute("message", message);
 	        httpSession.invalidate();
-	        return "logout";
+	        return "pages/logout";
 	    }
-	///////////////////  ///////////////////////////
+	////////////////////////////////////////////
 
 	public void session(Utilisateur utilisateur, HttpSession Httpsession) {
 		String sessionKey = "dating";
@@ -153,5 +142,8 @@ public class UtilisateurController {
 		Httpsession.setMaxInactiveInterval(60 * 30);
 
 	}
+	
+	
+	
 
 }

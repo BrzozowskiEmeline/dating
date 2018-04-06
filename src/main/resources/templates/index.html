@@ -13,11 +13,13 @@
 		<!-- Lpage d'acceuil va nous envoyer sur le formulaire -->
 		<input type="submit" value="S'inscrire">
 
-	</form>
+	</form><br>
 		<!-- //<h1 th:text="|${session."></h1> -->
-<form th:action="@{/connecter}" method="get">
-		<input type="submit" value="Se connecter">
-
+		
+		
+		
+<form th:action="@{/login}" method="get">   <!--  renvoie sur la page du login/la connexion --> 
+		<input type="submit" value="se connecter">
 </form>
 
 

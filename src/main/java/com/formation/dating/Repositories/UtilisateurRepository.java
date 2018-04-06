@@ -8,6 +8,7 @@ import com.formation.dating.Entities.Utilisateur;
 
 @Repository
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, String> {
-Utilisateur findUtilisateurByEmailUtilisateurAndMotDePasse(String emailUtilisateur, String motDePasse);
+	Utilisateur findUtilisateurByEmailUtilisateur(String emailUtilisateur);
+	Utilisateur findUtilisateurByEmailUtilisateurAndMotDePasse(String emailUtilisateur, String motDePasse);
 //Utilisateur findUtilisateurByEmailAndPAsswordAndAdmin(String emailUtilisateur, String motDePasse,Integer typeAdmin);
 }

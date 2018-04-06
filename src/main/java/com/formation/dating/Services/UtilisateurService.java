@@ -39,6 +39,10 @@ public class UtilisateurService {
 	
 
 	
+	public Utilisateur findUtilisateurByEmailUtilisateur(String emailUtilisateur) {
+		return ur.findUtilisateurByEmailUtilisateur(emailUtilisateur);
+	}
+	
 	public Utilisateur findUtilisateurByEmailUtilisateurAndMotDePasse(String emailUtilisateur, String motDePasse) {
 		return ur.findUtilisateurByEmailUtilisateurAndMotDePasse(emailUtilisateur, motDePasse);
 	}
