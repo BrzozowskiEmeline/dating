@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.formation.dating.Entity.Utilisateur;
-import com.formation.dating.Repository.UtilisateurRepository;
+import com.formation.dating.Entities.Utilisateur;
+import com.formation.dating.Repositories.UtilisateurRepository;
 
 @Service
 public class UtilisateurService {

@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.formation.dating.Entity.Adresse;
-import com.formation.dating.Entity.Apparence;
-import com.formation.dating.Entity.CentreInteret;
-import com.formation.dating.Entity.Multimedia;
-import com.formation.dating.Entity.Photo;
-import com.formation.dating.Entity.Situation;
-import com.formation.dating.Entity.Utilisateur;
+import com.formation.dating.Entities.Adresse;
+import com.formation.dating.Entities.Apparence;
+import com.formation.dating.Entities.CentreInteret;
+import com.formation.dating.Entities.Multimedia;
+import com.formation.dating.Entities.Photo;
+import com.formation.dating.Entities.Situation;
+import com.formation.dating.Entities.Utilisateur;
 import com.formation.dating.Services.AdresseService;
 import com.formation.dating.Services.ApparenceService;
 import com.formation.dating.Services.CentreInteretService;
@@ -60,11 +60,11 @@ public class UtilisateurController {
 			@Valid @ModelAttribute("multimedia") Multimedia multimedia, BindingResult resultmultimedia,
 			@Valid @ModelAttribute("photo") Photo photo, BindingResult resultphoto			
 			) {
-		 // if (resultUtilisateur.hasErrors() || resultadresse.hasErrors() ||
-		 //resultApparence.hasErrors() || resultCentreInteret.hasErrors() ||
-		 //resultSituation.hasErrors()||resultphoto.hasErrors() ) {
+		  if (resultUtilisateur.hasErrors() || resultadresse.hasErrors() ||
+		 resultApparence.hasErrors() || resultCentreInteret.hasErrors() ||
+		 resultSituation.hasErrors() ) {
 		
-		 //return "pages/Utilisateur"; }
+		 return "pages/Utilisateur"; }
 	
 		utilisateur.setAdresse(adresse);
 		utilisateur.setApparence(apparence);

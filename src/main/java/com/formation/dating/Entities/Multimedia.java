@@ -1,4 +1,4 @@
-package com.formation.dating.Entity;
+package com.formation.dating.Entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

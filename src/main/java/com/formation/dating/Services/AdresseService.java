@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.formation.dating.Entity.Adresse;
-import com.formation.dating.Repository.AdresseRepository;
+import com.formation.dating.Entities.Adresse;
+import com.formation.dating.Repositories.AdresseRepository;
 
 @Service
 public class AdresseService {

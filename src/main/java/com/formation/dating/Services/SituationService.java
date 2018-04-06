@@ -3,8 +3,8 @@ package com.formation.dating.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.formation.dating.Entity.Situation;
-import com.formation.dating.Repository.SituationRepository;
+import com.formation.dating.Entities.Situation;
+import com.formation.dating.Repositories.SituationRepository;
 
 @Service
 public class SituationService {

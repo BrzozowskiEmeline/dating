@@ -3,8 +3,8 @@ package com.formation.dating.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.formation.dating.Entity.Photo;
-import com.formation.dating.Repository.PhotoRepository;
+import com.formation.dating.Entities.Photo;
+import com.formation.dating.Repositories.PhotoRepository;
 
 @Service
 public class PhotoService {
