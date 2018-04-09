@@ -8,4 +8,6 @@ import com.formation.dating.Entities.Adresse;
 @Repository
 public interface AdresseRepository extends JpaRepository<Adresse, Long>{
 
+
+
 }

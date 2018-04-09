@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>Vous voulez rencontrer des gens dans votre departement:</h1>
+	
+
+<form th:action="@{/connexionproche}" method="post">
+		<h2>Connexion:</h2>
+<label for="CodePostal">Code Postale :</label> 
+		<input th:type='text' name="CodePostal">
+
+	
+		<input type="submit" value="Recherche">
+		
+		
+		<br><span th:text="${message != null} ? ${message} : ''"></span>
+</form>
+<form th:action="@{/}" method="get">   <!--  renvoie sur la page du login/la connexion --> 
+		<input type="submit" value="Retour page d'acceuil">
+</form>
+
+</body>
+</html>

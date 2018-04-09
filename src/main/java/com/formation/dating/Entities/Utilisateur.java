@@ -54,8 +54,9 @@ public class Utilisateur {
 	@Column(length =500)
 	private String description;
 	
+	
 	@NotNull(message = "Attention un pseudo est recommandé ")
-	@Pattern(regexp = "(?i)[a-z ]{2,32}")
+//	@Pattern(regexp = "(?i)[a-z0-9  à-ÿ]{2,32}")
 	private String pseudo;
 	
 

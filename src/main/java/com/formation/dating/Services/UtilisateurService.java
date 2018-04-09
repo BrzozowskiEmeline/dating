@@ -15,25 +15,6 @@ public class UtilisateurService {
 //	private final SituationRepository sr;
 //	private final CentreInteretRepository cir;
 
-	
-
-	// ajoute tout
-		public void setAllUtilisateurs(List<Utilisateur> utilisateur) {
-			ur.saveAll(utilisateur);
-		}
-		
-		
-		
-		// affichage
-		public List<Utilisateur> getAllUtilisateurs() {
-			return ur.findAll();
-		}
-	
-		
-		
-		
-		
-		
 	@Autowired
 	public UtilisateurService(UtilisateurRepository ur) {
 		super();
@@ -47,7 +28,23 @@ public class UtilisateurService {
 //		sr.save(situation);
 //		cir.save(centreInteret);
 	}
+
+	// ajoute tout
+		public void setAllUtilisateurs(List<Utilisateur> utilisateur) {
+			ur.saveAll(utilisateur);
+		}
+		
+		
+		
+		// affichage
+		public List<Utilisateur> getAllUtilisateurs() {
+			return ur.findAll();
+		}
+		
+		
 	
+		
+		
 
 	
 	public Utilisateur findUtilisateurByEmailUtilisateur(String emailUtilisateur) {
@@ -57,6 +54,8 @@ public class UtilisateurService {
 	public Utilisateur findUtilisateurByEmailUtilisateurAndMotDePasse(String emailUtilisateur, String motDePasse) {
 		return ur.findUtilisateurByEmailUtilisateurAndMotDePasse(emailUtilisateur, motDePasse);
 	}
+
+
 	
 //	public Utilisateur findUtilisateurByEmailAndPAsswordAndAdmin(String emailUtilisateur, String motDePasse, Integer typeAdmin) {
 //		return ur.findUtilisateurByEmailAndPAsswordAndAdmin(emailUtilisateur, motDePasse,typeAdmin);

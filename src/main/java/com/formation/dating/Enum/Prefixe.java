@@ -2,7 +2,7 @@ package com.formation.dating.Enum;
 
 public enum Prefixe {
 	
-	Bis("Bis"),Ter("Ter");
+	Aucun("Aucun"),Bis("Bis"),Ter("Ter");
 	
 	private String prefixe;
 
