@@ -29,6 +29,8 @@ public class AdresseService {
 		public  List<Adresse> affiche() {
 			return ar.findAll();
 		}
-	
+
+
+
 	
 }

@@ -83,6 +83,12 @@
 			<br>
 			<label> Adresse :</label><br>
 		</div>
+		
+		
+		<label for="num"> Numero de Rue:</label> 
+		<input type=text th:field="*{adresse.num}" th:placeholder="N"><br>
+		<p th:if="${#fields.hasErrors('adresse.num')}"th:errors="*{adresse.num}"></p>
+		
 		<label for="name"> Nom de Rue:</label> 
 		<input type=text th:field="*{adresse.nom}"><br>
 		<p th:if="${#fields.hasErrors('adresse.nom')}"th:errors="*{adresse.nom}"></p>
@@ -107,10 +113,10 @@
 		<input type='text' id="ville"th:field="*{adresse.ville}"><br>
 		<p th:if="${#fields.hasErrors('adresse.ville')}"th:errors="*{adresse.ville}"></p>
 
-		<label for="CodePostal">CodePostal :</label>
-		<input type='text'id="CodePostal" th:field="*{adresse.CodePostal}"><br>
+		<label for="codepostal"> Code Postal:</label> 
+			
+		<input type=text  th:field="*{adresse.CodePostal}"><br>
 		<p th:if="${#fields.hasErrors('adresse.CodePostal')}"th:errors="*{adresse.CodePostal}"></p>
-		<br>
 
 
 

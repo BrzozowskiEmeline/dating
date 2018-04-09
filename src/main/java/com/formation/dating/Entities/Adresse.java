@@ -25,9 +25,11 @@ public class Adresse {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-
 	
-	@Column(name="codePostal", length=5)
+	
+	private int num;
+
+	//@Column(length=5)
 	private int CodePostal;
 	
 	
@@ -45,7 +47,7 @@ public class Adresse {
 	private TypeRue typeRue;
 	
 	
-	@Pattern(regexp = "(?i)[a-z- ]{1,10}", message = "{Veuillez remplir le complement}")
+	@Pattern(regexp = "[a-z0-9  à-ÿ]{1,100}", message = "{Veuillez remplir le complement}")
 	private String complement;
 	
 	
@@ -71,12 +73,7 @@ public class Adresse {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public int getCodePostal() {
-		return CodePostal;
-	}
-	public void setCodePostal(int codePostal) {
-		CodePostal = codePostal;
-	}
+
 	public String getVille() {
 		return ville;
 	}
@@ -102,6 +99,12 @@ public class Adresse {
 	public void setTypeRue(TypeRue typeRue) {
 		this.typeRue = typeRue;
 	}
+	public int getCodePostal() {
+		return CodePostal;
+	}
+	public void setCodePostal(int codePostal) {
+		CodePostal = codePostal;
+	}
 	public String getComplement() {
 		return complement;
 	}
@@ -115,26 +118,36 @@ public class Adresse {
 		this.prefixe = prefixe;
 	}
 
-
-
-
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
 	
-	public Adresse(Long id, @NotBlank int codePostal, @NotBlank String ville, @NotBlank String nom,
-		@NotBlank TypeRue typeRue, String complement, Prefixe prefixe) {
-	super();
-	this.id = id;
-	CodePostal = codePostal;
-	this.ville = ville;
-	this.nom = nom;
-	this.typeRue = typeRue;
-	this.complement = complement;
-	this.prefixe = prefixe;
-}
+	
+	
 
-
+	public Adresse(Long id, int num, int codePostal,
+			@Pattern(regexp = "(?i)[a-z- ]{1,45}", message = "{Veuillez ajouter votre ville}") String ville,
+			@NotBlank String nom, @NotNull(message = "Message d''erreur") TypeRue typeRue,
+			@Pattern(regexp = "[a-z0-9  à-ÿ]{1,100}", message = "{Veuillez remplir le complement}") String complement,
+			Prefixe prefixe, List<Utilisateur> utilisateurs) {
+		super();
+		this.id = id;
+		this.num = num;
+		this.CodePostal = codePostal;
+		this.ville = ville;
+		this.nom = nom;
+		this.typeRue = typeRue;
+		this.complement = complement;
+		this.prefixe = prefixe;
+		this.utilisateurs = utilisateurs;
+	}
 	public Adresse() {
 		
 		utilisateurs = new ArrayList<>();
+		
 	}
 	
 

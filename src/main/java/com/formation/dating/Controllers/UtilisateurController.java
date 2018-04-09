@@ -19,10 +19,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.formation.dating.Entities.Adresse;
 import com.formation.dating.Entities.Apparence;
 import com.formation.dating.Entities.CentreInteret;
+import com.formation.dating.Entities.CodePostal;
 import com.formation.dating.Entities.Multimedia;
 import com.formation.dating.Entities.Photo;
 import com.formation.dating.Entities.Situation;
 import com.formation.dating.Entities.Utilisateur;
+import com.formation.dating.Enum.Date;
 import com.formation.dating.Enum.Sexe;
 import com.formation.dating.Services.AdresseService;
 import com.formation.dating.Services.ApparenceService;
@@ -157,7 +159,7 @@ public class UtilisateurController {
 
 	}
 	
-	@GetMapping("/utilisateurs")  // ici utiliser un Model dc faitre avec un addattribute / sinon si c'est un ModelAndView utiliser une list avc return comme annuaire
+	@GetMapping("/utilisateurs")  // ici utiliser un Model dc faire avec un add attribute / sinon si c'est un ModelAndView utiliser une list avc return comme annuaire
 	public String getAllUtilisateur( Model model) {
 		model.addAttribute("sexeF", Sexe.F);
 		model.addAttribute("sexeH", Sexe.H);
@@ -166,8 +168,14 @@ public class UtilisateurController {
 	}
 	
 	
+	//////////////////Recherche dans le même departement ///////////
+
+
+@GetMapping("/proche")
+public String getAllutilisateur( Model model) {
+	model.addAttribute("utilisateurs",us.getAllUtilisateurs());
+	return "pages/proche";
 	
-	
-	
+}
 
 }
