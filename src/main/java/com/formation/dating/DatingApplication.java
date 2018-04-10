@@ -9,6 +9,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 public class DatingApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(DatingApplication.class, args);}
 		
 		@Override
@@ -16,7 +17,8 @@ public class DatingApplication extends SpringBootServletInitializer{
 		return builder.sources(DatingApplication.class);
 		}
 		
+
+
 	
-	
-	
+
 }

@@ -19,12 +19,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.formation.dating.Entities.Adresse;
 import com.formation.dating.Entities.Apparence;
 import com.formation.dating.Entities.CentreInteret;
-import com.formation.dating.Entities.CodePostal;
 import com.formation.dating.Entities.Multimedia;
 import com.formation.dating.Entities.Photo;
 import com.formation.dating.Entities.Situation;
 import com.formation.dating.Entities.Utilisateur;
-import com.formation.dating.Enum.Date;
 import com.formation.dating.Enum.Sexe;
 import com.formation.dating.Services.AdresseService;
 import com.formation.dating.Services.ApparenceService;
@@ -41,7 +39,6 @@ public class UtilisateurController {
 	private final CentreInteretService cis;
 	private final AdresseService as;
 	private final ApparenceService aps;
-	private final PhotoService ps;
 
 	@Autowired
 	public UtilisateurController(UtilisateurService us, SituationService ss, CentreInteretService cis,
@@ -52,7 +49,6 @@ public class UtilisateurController {
 		this.cis = cis;
 		this.as = as;
 		this.aps = aps;
-		this.ps = ps;
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/result")
@@ -76,7 +72,7 @@ public class UtilisateurController {
 		utilisateur.setSituation(situation);
 		as.add(adresse);
 		aps.add(apparence);
-		//ps.add(photo);
+		
 		cis.add(centreInteret);
 		ss.add(situation);
 		us.add(utilisateur);
@@ -177,5 +173,9 @@ public String getAllutilisateur( Model model) {
 	return "pages/proche";
 	
 }
+
+
+
+
 
 }
