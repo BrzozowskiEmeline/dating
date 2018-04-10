@@ -21,16 +21,19 @@ public class UtilisateurServiceTest {
 		
 		String emailUtilisateur = "emeer@hotmail.fr";
 		Utilisateur user = us.findUtilisateurByEmailUtilisateur(emailUtilisateur);
-		
 		Assert.assertEquals(user.getEmailUtilisateur(),emailUtilisateur);
 		Assert.assertNotNull(user);
 		
+		emailUtilisateur ="jerome@hotmail.fr";
+				user = us.findUtilisateurByEmailUtilisateur(emailUtilisateur);
+		Assert.assertEquals(user.getEmailUtilisateur(),emailUtilisateur);
+		
 	}
 	
-	@Test
-	public void add() {
-		us.add(utilisateur);
-	}
+//	@Test
+//	public void add() {
+//		us.add(user);
+//	}
 	
 	
 
